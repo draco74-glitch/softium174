@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Clean-param: utm_source utm_medium utm_campaign utm_term utm_content from ref source session & /
 
-Sitemap: https://sj3taem4.qwenwork.page/sitemap.xml
+Sitemap: https://softium174.ru/sitemap.xml
