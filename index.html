@@ -410,8 +410,12 @@
     </div>
     <div class="rev-head reveal">
       <span class="rev-badge">Больше отзывов — на <a href="https://2gis.ru/chelyabinsk/firm/70000001033396096" target="_blank" rel="noopener">2ГИС</a> и в <a href="https://yandex.ru/maps/org/softium/117984882932/" target="_blank" rel="noopener">Яндекс.Картах</a></span>
+      <div class="reviews-nav" aria-hidden="false">
+        <button class="rev-btn" type="button" id="revPrev" aria-label="Прокрутить отзывы влево"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="rev-btn" type="button" id="revNext" aria-label="Прокрутить отзывы вправо"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
-    <div class="reviews-grid">
+    <div class="reviews-rail" id="revRail" tabindex="0" role="region" aria-label="Отзывы — прокручивается стрелками или перетаскиванием">
       <article class="review reveal">
         <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
         <blockquote>«Ребёнок просто в восторге от занятий! Очень нравится, индивидуальный подход преподавателя, удобное расположение. Рекомендую!»</blockquote>

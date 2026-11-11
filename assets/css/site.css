@@ -418,13 +418,22 @@ footer .logo-city{color:#7fd4ff}
 .rev-badge .stars{color:var(--sun);letter-spacing:2px}
 .rev-badge a{color:#7fd4ff;font-weight:800;text-decoration:none}
 .rev-badge a:hover{text-decoration:underline}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.review{background:#fff;border:1.5px solid rgba(11,43,69,.10);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:12px}
+.reviews-nav{display:flex;gap:10px;margin-left:auto}
+.rev-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(11,43,69,.18);background:#fff;cursor:pointer;display:grid;place-items:center;transition:background .15s ease,border-color .15s ease,opacity .15s ease}
+.rev-btn:hover{background:var(--mist);border-color:var(--sky-deep)}
+.rev-btn svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.rev-btn[disabled]{opacity:.35;cursor:default;pointer-events:none}
+.reviews-rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:rgba(11,43,69,.25) transparent;-webkit-overflow-scrolling:touch}
+.reviews-rail::-webkit-scrollbar{height:8px}
+.reviews-rail::-webkit-scrollbar-track{background:transparent}
+.reviews-rail::-webkit-scrollbar-thumb{background:rgba(11,43,69,.2);border-radius:99px}
+.reviews-rail:focus-visible{outline:3px solid var(--sky-deep);outline-offset:4px;border-radius:12px}
+.review{flex:0 0 clamp(260px,31%,360px);scroll-snap-align:start;background:#fff;border:1.5px solid rgba(11,43,69,.10);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:12px}
 .review .stars{color:var(--sun);font-weight:900;letter-spacing:3px;font-size:15px}
 .review blockquote{margin:0;font-size:15.5px;color:var(--ink);line-height:1.55}
 .review .who{margin-top:auto;font-size:13.5px;color:var(--ink-soft);font-weight:700}
 .review .who a{color:var(--sky-ink);text-decoration:none;font-weight:800}
-@media (max-width:860px){.reviews-grid{grid-template-columns:1fr}}
+@media (max-width:860px){.review{flex:0 0 82%}}
 
 /* sticky mobile CTA */
 .sticky-cta{display:none}

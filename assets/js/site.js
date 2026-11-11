@@ -54,6 +54,27 @@
     ctaIO.observe(signupEl);
   }
 
+  /* reviews carousel: стрелки листают ленту на карточку */
+  var rail = document.getElementById("revRail");
+  var revPrev = document.getElementById("revPrev");
+  var revNext = document.getElementById("revNext");
+  if (rail && revPrev && revNext) {
+    var revStep = function(){
+      var card = rail.querySelector(".review");
+      return card ? card.getBoundingClientRect().width + 18 : 320;
+    };
+    var revBehavior = reduceMotion ? "auto" : "smooth";
+    var revUpdate = function(){
+      revPrev.disabled = rail.scrollLeft < 8;
+      revNext.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
+    };
+    revPrev.addEventListener("click", function(){ rail.scrollBy({left:-revStep(), behavior:revBehavior}); });
+    revNext.addEventListener("click", function(){ rail.scrollBy({left:revStep(), behavior:revBehavior}); });
+    rail.addEventListener("scroll", revUpdate, {passive:true});
+    window.addEventListener("resize", revUpdate);
+    revUpdate();
+  }
+
   /* reveal on scroll */
   var revealEls = document.querySelectorAll(".reveal");
   if (reduceMotion || !("IntersectionObserver" in window)) {
